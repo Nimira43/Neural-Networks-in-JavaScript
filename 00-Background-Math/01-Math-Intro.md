@@ -30,5 +30,20 @@ quantify the relationship => covariance, correlation
 
 ### Dimensions and Vectors
 
-2 dimension vector = (x, y)
+2 dimension vector = (x, y) or (area, price)
+3 dimension vectors = (x, y, z) or (area, price, rooms)
+
+##### Linear algebra works well with higher dimension data
+
+For example:
+
+500 dimensions
+v
+Dimensionality Reduction
+v
+To convert for instance into
+v
+2 dimensions
+v
+This concept is called PCA (more of that later)
 
