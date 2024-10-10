@@ -18,6 +18,10 @@ class Perceptron {
     for (let i = 0; i < trainData.length; i++) {
       let sum = this.bias
       let inputs = trainData[i]
+      for (let j = 0; j < inputs.length;  j++) {
+        sum += inputs[j] * this.weights[j]
+      }
+      console.log(sum)
     }
   }
 }
