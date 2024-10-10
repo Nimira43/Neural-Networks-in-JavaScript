@@ -7,9 +7,20 @@ const trainInputs = [
 ]
 
 const trainLabels = [1, 1, 0, 0, 0]
-const weights = [0.1, -0.3] // old weights
-const weights = [0.3, 0.4] // new adjusted weights
-const b = 0.5 // old bias
-const b = 0.6 // new adjusted bias
-const n = 0.1 // learning rate
 
+class Perceptron {
+  constructor(learningRate = 0.1) {
+    this.weights = [0.3, 0.4]
+    this.bias = 0.6
+    this.learningRate = learningRate
+  }
+  train(trainData) {
+    for (let i = 0; i < trainData.length; i++) {
+      let sum = this.bias
+      let inputs = trainData[i]
+    }
+  }
+}
+
+const perceptron = new Perceptron()
+perceptron.train(trainInputs)
