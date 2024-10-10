@@ -10,8 +10,8 @@ const trainLabels = [1, 1, 0, 0, 0]
 
 class Perceptron {
   constructor(learningRate = 0.1) {
-    this.weights = [0.3, 0.4]
-    this.bias = 0.6
+    this.weights = [0.1, -0.3]  // unmodified weights
+    this.bias = 0.5             // unmodified bias
     this.learningRate = learningRate
   }
   train(trainData) {
