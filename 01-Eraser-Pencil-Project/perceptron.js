@@ -1,4 +1,5 @@
 const trainInputs = [
+  
   [2, 7],
   [3, 6],
   [1, 1],
