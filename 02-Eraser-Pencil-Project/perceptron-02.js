@@ -16,21 +16,32 @@ class Perceptron {
     this.learningRate = learningRate
   }
 
-  activationFucntion(x) {
+  activationFunction(x) {
     return x >= 0 ? 1 : 0
   }
 
-  train(trainData) {
+  train(trainData, trainLabels) {
     for (let i = 0; i < trainData.length; i++) {
       let sum = this.bias
       let inputs = trainData[i]
       for (let j = 0; j < inputs.length;  j++) {
         sum += inputs[j] * this.weights[j]
       }
+
       console.log(sum)
+      const yp = this.activationFunction(sum)
+      const yt = trainLabels[i]
+      if (yt != yp) {
+        for (let k = 0; k < this.weights.length; k++) {
+          this.weights[k] += this.learningRate * (yt - yp) * inputs[k]
+        }
+        this.bias += this.learningRate * (yt - yp)
+      }
     }
   }
 }
 
 const perceptron = new Perceptron()
-perceptron.train(trainInputs)
+perceptron.train(trainInputs, trainLabels)
+
+console.log(perceptron)
