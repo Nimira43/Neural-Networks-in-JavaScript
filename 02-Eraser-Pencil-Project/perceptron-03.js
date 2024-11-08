@@ -56,7 +56,10 @@ class Perceptron {
 
 const perceptron = new Perceptron()
 
-
+const epochs = 10
+for (let epoch = 0; epoch < epochs; epoch++) {
+  perceptron.train(trainInputs, trainLabels)
+}
 
 perceptron.train(trainInputs, trainLabels)
 const trainingAccuracy = perceptron.calculateAccuracy(trainInputs, trainLabels)
