@@ -11,8 +11,8 @@ const trainLabels = [1, 1, 0, 0, 0]
 
 class Perceptron {
   constructor(learningRate = 0.1) {
-    this.weights = [0.1, -0.3]  // modified weights
-    this.bias = 0.5            // modified bias
+    this.weights = [0.3, 0.4]  // modified weights
+    this.bias = 0.6            // modified bias
     this.learningRate = learningRate
   }
 
@@ -20,20 +20,17 @@ class Perceptron {
     return x >= 0 ? 1 : 0
   }
 
-  predict(inputs) {
-    let sum = this.bias
-    for (let j = 0; j < inputs.length;  j++) {
-      sum += inputs[j] * this.weights[j]
-    }
-    return this.activationFunction(sum)
-  }
-
   train(trainData, trainLabels) {
     for (let i = 0; i < trainData.length; i++) {
+      let sum = this.bias
       let inputs = trainData[i]
-      const yp = this.predict(inputs)
+      for (let j = 0; j < inputs.length;  j++) {
+        sum += inputs[j] * this.weights[j]
+      }
+
+      console.log(sum)
+      const yp = this.activationFunction(sum)
       const yt = trainLabels[i]
-      
       if (yt != yp) {
         for (let k = 0; k < this.weights.length; k++) {
           this.weights[k] += this.learningRate * (yt - yp) * inputs[k]
