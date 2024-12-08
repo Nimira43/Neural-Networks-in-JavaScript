@@ -71,13 +71,9 @@ for (let epoch = 0; epoch < epochs; epoch++) {
   perceptron.train(trainInputs, trainLabels)
 }
 
-// Implementation
-perceptron.train(trainInputs, trainLabels)
-
 const trainingAccuracy = perceptron.calculateAccuracy(trainInputs, trainLabels)
 
 const testingAccuracy = perceptron.calculateAccuracy(testInputs, testLabels)
-
 
 console.log('----------------------------------------')
 console.log(perceptron)
