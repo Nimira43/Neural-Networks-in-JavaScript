@@ -36,17 +36,17 @@
 
 ###### Underfitting: If both training and testing accuracies are low, the model might be underfitting. This means it has not learned the underlying patterns in the data well enough.
 
-## Perceptron 4 Model's Performance
+#### Perceptron 4 Model's Performance
 
-#### Based on the provided accuracies:
+##### Based on the provided accuracies:
 
 ###### If the training accuracy is significantly higher than the testing accuracy, your model might be overfitting.
 
 ###### If both accuracies are low, it might be underfitting.
 
-## Potential Improvements
+#### Potential Improvements
 
-#### For Overfitting:
+##### For Overfitting:
 
 ###### Increase the Training Data: More data can help the model generalise better.
 
@@ -54,8 +54,39 @@
 
 ###### Regularisation: Apply techniques like L2 regularisation to prevent the model from fitting the noise.
 
-#### For Underfitting:
+##### For Underfitting:
 
 ###### Increase Model Complexity: Add more features or use a more complex model (e.g., a multi-layer perceptron).
 
 ###### More Training Epochs: Train the model for more epochs to allow it to learn better.
+
+## Verdict 
+
+#### Overfitting and Generalization
+
+###### Overfitting Signs: The model performs perfectly on training data but has a gap in performance on test data, indicating it might be overfitting.
+
+###### Consistent Test Accuracy: Increasing epochs doesn't improve test accuracy, which suggests the model has plateaued in terms of what it can learn from the given data.
+
+#### Potential Solutions and Improvements
+
+##### 1. Increase Training Data
+###### More diverse and extensive training data can help the model learn better generalisations and reduce overfitting.
+
+##### 2. Regularisation Techniques
+###### Apply regulariation to prevent the model from overfitting. Common techniques include:
+
+###### L2 Regularization (Ridge Regression): Adds a penalty equal to the sum of the squared values of the coefficients.
+
+###### L1 Regularization (Lasso Regression): Adds a penalty equal to the sum of the absolute values of the coefficients.
+
+##### 3. Cross-Validation
+###### Use cross-validation to ensure the model generalises well across different subsets of the data.
+
+##### 4. Feature Engineering
+###### New Features: Consider creating new, more informative features.
+
+###### Feature Scaling: Ensure your features are scaled properly, especially if they have different units or magnitudes.
+
+##### 5. Model Complexity
+###### Increase Complexity: Add more neurons or layers, or use a different model like a multi-layer perceptron (MLP) which can capture more complex patterns.
