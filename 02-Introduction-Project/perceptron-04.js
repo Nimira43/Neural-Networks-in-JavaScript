@@ -1,4 +1,3 @@
-
 // [grams, scale]
 
 const trainInputs = [
@@ -30,11 +29,9 @@ class Perceptron {
     this.bias = 0.5            // modified bias
     this.learningRate = learningRate
   }
-
   activationFunction(x) {
     return x >= 0 ? 1 : 0
   }
-
   predict(inputs) {
     let sum = this.bias
     for (let j = 0; j < inputs.length;  j++) {
@@ -42,13 +39,11 @@ class Perceptron {
     }  
     return this.activationFunction(sum)
   }
-
   train(trainData, trainLabels) {
     for (let i = 0; i < trainData.length; i++) {
       let inputs = trainData[i]
       const yp = this.predict(inputs)
       const yt = trainLabels[i]
-
       if (yt != yp) {
         for (let k = 0; k < this.weights.length; k++) {
           this.weights[k] += this.learningRate * (yt - yp) * inputs[k]
@@ -69,18 +64,25 @@ class Perceptron {
   }
 }
 
+// Training the model
 const perceptron = new Perceptron()
-
 const epochs = 10
 for (let epoch = 0; epoch < epochs; epoch++) {
   perceptron.train(trainInputs, trainLabels)
 }
 
+// Implementation
 perceptron.train(trainInputs, trainLabels)
+
 const trainingAccuracy = perceptron.calculateAccuracy(trainInputs, trainLabels)
+
+const testingAccuracy = perceptron.calculateAccuracy(testInputs, testLabels)
 
 
 console.log('----------------------------------------')
 console.log(perceptron)
 console.log('----------------------------------------')
 console.log(`Training Accuracy: ${trainingAccuracy}% `)
+console.log('----------------------------------------')
+console.log(`Testing Accuracy: ${testingAccuracy}% `)
+console.log('----------------------------------------')
