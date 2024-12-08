@@ -23,7 +23,7 @@ const testLabels = [1, 1, 0, 0, 1]
 class Perceptron {
   constructor(learningRate = 0.1) {
     this.weights = Array(2).fill(0).map(() => Math.random() * 0.5 - 0.2)
-    this.bias = 0.5            // modified bias
+    this.bias = Math.random() * 0.5 - 0.2
     this.learningRate = learningRate
   }
   activationFunction(x) {
